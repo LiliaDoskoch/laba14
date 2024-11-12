@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4.1</title>
+</head>
+<body>
+
+<h2>Виведення масивів</h2>
+<div id="output"></div>
+
+<script>
+    let Treag = [];
+    for (let n = 1; n <= 10; n++) {
+        Treag.push(n * (n + 1) / 2);
+    }
+    document.getElementById('output').innerHTML += "Трикутні числа: " + Treag.join("  ") + "<br>";
+
+    let kvd = [];
+    for (let n = 1; n <= 10; n++) {
+        kvd.push(n * n);
+    }
+    document.getElementById('output').innerHTML += "Квадрати чисел: " + kvd.join(" ") + "<br>";
+
+    let rez = Treag.concat(kvd);
+    document.getElementById('output').innerHTML += "Об'єднаний масив: " + rez.join(" ") + "<br>";
+
+    rez.sort((a, b) => b - a);
+    document.getElementById('output').innerHTML += "Відсортований масив: " + rez.join(" ") + "<br>";
+</script>
+
+<div style="margin-top: 20px;">
+    <button onclick="window.location.href='/Users/liliya/Desktop/WebDesine/lab 14/index.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Повернутися на головну
+    </button>
+</div>
+
+</body>
+</html>

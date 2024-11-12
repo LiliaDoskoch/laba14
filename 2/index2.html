@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4.2</title>
+</head>
+<body>
+
+<h2>Обробка масиву</h2>
+<div id="output"></div>
+
+<script>
+    let arr = [];
+    for (let i = 0; i < 15; i++) {
+        arr.push(Math.floor(Math.random() * 100) + 1);
+    }
+    document.getElementById('output').innerHTML += "Початковий масив: " + arr.join(" ") + "<br>";
+
+    let minIndex = 0;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < arr[minIndex]) {
+            minIndex = i;
+        }
+    }
+    let minValue = arr[minIndex];
+    document.getElementById('output').innerHTML += "Мінімальне значення: " + minValue + "<br>";
+
+    let targetIndex = 5; 
+    document.getElementById('output').innerHTML += "Номер елемента для заміни: " + targetIndex + "<br>";
+
+    let temp = arr[targetIndex];
+    arr[targetIndex] = arr[minIndex];
+    arr[minIndex] = temp;
+
+    document.getElementById('output').innerHTML += "Масив після заміни: " + arr.join(" ") + "<br>";
+</script>
+<div style="margin-top: 20px;">
+    <button onclick="window.location.href='/Users/liliya/Desktop/WebDesine/lab 14/index.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Повернутися на головну
+    </button>
+</div>
+</body>
+</html>

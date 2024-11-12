@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4.4</title>
+</head>
+<body>
+
+<h2>Операції з масивами</h2>
+<div id="output"></div>
+
+<script>
+    let fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+    let citrus = ['orange', 'lemon', 'lime'];
+    document.getElementById('output').innerHTML += "Масив fruits: " + fruits.join(", ") + "<br>";
+    document.getElementById('output').innerHTML += "Масив citrus: " + citrus.join(", ") + "<br>";
+    
+    let combinedFruits = fruits.concat(citrus);
+    document.getElementById('output').innerHTML += "Об'єднаний масив fruits і citrus: " + combinedFruits.join(", ") + "<br>";
+
+    let fruitsWithNewItems = fruits.slice(); 
+    fruitsWithNewItems.splice(3, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+    document.getElementById('output').innerHTML += "Масив fruits з доданими елементами: " + fruitsWithNewItems.join(", ") + "<br>";
+
+    let fruitsWithoutLastThree = fruits.slice(0, -3); 
+    document.getElementById('output').innerHTML += "Масив fruits без останніх 3 елементів: " + fruitsWithoutLastThree.join(", ") + "<br>";
+
+    let sortedFruits = fruits.slice().sort();
+    document.getElementById('output').innerHTML += "Відсортований масив fruits (алфавітно): " + sortedFruits.join(", ") + "<br>";
+
+    let reverseSortedFruits = fruits.slice().sort().reverse();
+    document.getElementById('output').innerHTML += "Масив fruits у зворотному алфавітному порядку: " + reverseSortedFruits.join(", ") + "<br>";
+
+    let lengthSortedFruits = fruits.slice().sort((a, b) => a.length - b.length);
+    document.getElementById('output').innerHTML += "Масив fruits, відсортований за довжиною слів: " + lengthSortedFruits.join(", ") + "<br>";
+</script>
+<div style="margin-top: 20px;">
+    <button onclick="window.location.href='/Users/liliya/Desktop/WebDesine/lab 14/index.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Повернутися на головну
+    </button>
+</div>
+</body>
+</html>
